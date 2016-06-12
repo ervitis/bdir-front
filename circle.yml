@@ -1,0 +1,14 @@
+machine:
+  node:
+    version: 6.1.0
+
+dependencies:
+  override:
+    - npm install
+
+test:
+  pre:
+    - bower install
+
+  override:
+    - grunt test
