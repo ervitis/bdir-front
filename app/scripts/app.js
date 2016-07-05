@@ -10,13 +10,9 @@
  */
 angular
     .module('bdirFrontApp', [
-        'ngAnimate',
         'ngCookies',
-        'ngMessages',
         'ngResource',
-        'ngRoute',
-        'ngSanitize',
-        'ngTouch'
+        'ngRoute'
     ])
     .config(function ($routeProvider) {
         $routeProvider
