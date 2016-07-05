@@ -14,4 +14,8 @@ angular.module('bdirFrontApp')
             'AngularJS',
             'Karma'
         ];
-    });
+    })
+    .controller('LoginCtrl', ['$scope', function($scope) {
+        
+    }])
+;
