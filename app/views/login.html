@@ -1,13 +1,13 @@
 <div class="container">
-    <form class="form-horizontal">
+    <form class="form-horizontal" ng-submit="submit()" ng-controller="LoginCtrl">
         <div class="col-xs-12 form-group">
             <label for="username" class="control-label">Username: </label>
-            <input id="username" class="form-control" type="text" required="required" ng-required="true">
+            <input id="username" class="form-control" type="text" required="required" ng-required="true" ng-model="username">
         </div>
 
         <div class="col-xs-12 form-group">
             <label for="password" class="control-label">Password: </label>
-            <input id="password" class="form-control" type="password" required="required" ng-required="true">
+            <input id="password" class="form-control" type="password" required="required" ng-required="true" ng-model="password">
         </div>
 
         <div class="col-xs-12 form-group">
@@ -19,4 +19,14 @@
             </div>
         </div>
     </form>
+
+    <div ng-hide="$scope.isLogged == null">
+        <div class="alert alert-info" ng-hide="$scope.isLogged">
+            You are logged in!
+        </div>
+
+        <div class="alert alert-danger" ng-hide="!$scope.isLogged">
+            You are not logged in!
+        </div>
+    </div>
 </div>

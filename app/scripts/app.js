@@ -12,7 +12,9 @@ angular
     .module('bdirFrontApp', [
         'ngCookies',
         'ngResource',
-        'ngRoute'
+        'ngRoute',
+        'LocalStorageModule',
+        'ApiDataModule'
     ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -25,6 +27,11 @@ angular
                 templateUrl: 'views/login.html',
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
+            })
+            .when('/operations', {
+                templateUrl: 'views/operations.html',
+                controller: 'OperationsCtrl',
+                controllerAs: 'operations'
             })
             .otherwise({
                 redirectTo: '/'
