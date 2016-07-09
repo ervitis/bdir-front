@@ -18,10 +18,15 @@ angular.module('bdirFrontApp')
     .controller('LoginCtrl', function(localStorageService, apiDataService, $scope, $http) {
         $scope.isLogged = null;
         
-        function successCallback(result) {
-            $scope.message = 'Logged';
-            $scope.jwt = result.data;
-            $scope.isLogged = true;
+        function successCallback(response) {
+            if (response.token) {
+                localStorageService.add('token', response.token);
+                localStorageService.add('curentuser', $scope.username);
+
+                $http.defaults.headers.common.Authorization = 'Bearer: ' + response.token;
+
+                $scope.isLogged = true;
+            }
         }
         
         function failCallback() {

@@ -29,7 +29,7 @@ describe('Controller: LoginCtrl', function () {
                 console.log(method, url, data, headers);
 
                 scope.isLogged = true;
-                return [200, {jwt: '12345678.234554123452.623456'}, {}];
+                return [200, {token: '12345678.234554123452.623456'}, {}];
             })
         ;
     }));
@@ -39,6 +39,6 @@ describe('Controller: LoginCtrl', function () {
     });
 
     it('call the apiDataService and return a jwt code', function() {
-        expect(scope.jwt !== null);
+        expect(scope.token !== null);
     });
 });
